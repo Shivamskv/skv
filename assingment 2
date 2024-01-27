@@ -1,0 +1,12 @@
+-- Retrieve the total number of rentals made in the Sakila database. 
+select count(*) as total_rental from rental;
+
+-- Find the average rental duration (in days) of movies rented from the Sakila database.
+select date(rental_date) as rental_date, datediff(return_date, rental_date) 
+as avg_rental_duration_in_days from rental where return_date is not null order by rental_date;
+
+-- Display the first name and last name of customers in uppercase.
+select upper(first_name) , upper(last_name) from customer;
+
+-- Extract the month from the rental date and display it alongside the rental ID. 
+select month(rental_date) as renal_id from rental;
